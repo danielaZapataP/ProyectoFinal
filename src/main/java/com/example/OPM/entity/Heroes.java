@@ -1,6 +1,7 @@
 package com.example.OPM.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="heroes")
@@ -27,6 +28,28 @@ public class Heroes {
 
     @Column(name="telefono")
     private String telefono;
+
+    @OneToMany(mappedBy = "heroe", fetch = FetchType.EAGER)
+    private List<Batallas> batallas;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Patrocinadores> patrocinadoresHList ;
+
+    public List<Patrocinadores> getPatrocinadoresHList() {
+        return patrocinadoresHList;
+    }
+
+    public void setPatrocinadoresHList(List<Patrocinadores> patrocinadoresHList) {
+        this.patrocinadoresHList = patrocinadoresHList;
+    }
+
+    public List<Batallas> getBatallas() {
+        return batallas;
+    }
+
+    public void setBatallas(List<Batallas> batallas) {
+        this.batallas = batallas;
+    }
 
     public int getIdHeroe() {
         return idHeroe;

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="batalla")
-public class Batalla {
+public class Batallas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idbatalla")
@@ -18,6 +18,15 @@ public class Batalla {
 
     @Column(name="ganador")
     private char ganador;
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="idheroe", insertable = false, updatable = false)
+    private Heroes heroe;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="idmonstruo", insertable = false, updatable = false)
+    private Monstruos monstruo;
 
     public int getIdBatalla() {
         return idBatalla;
