@@ -3,10 +3,11 @@ package com.example.OPM.services;
 
 import com.example.OPM.dao.ICasaSaitamaDAO;
 import com.example.OPM.entity.CasaSaitama;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CasaSaitamaService implements ICasaSaitamaService{
     private ICasaSaitamaDAO casaSaitamaDAO;
     @Override
