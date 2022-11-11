@@ -2,12 +2,14 @@ package com.example.OPM.services;
 
 import com.example.OPM.dao.IHeroesDAO;
 import com.example.OPM.entity.Heroes;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 @Service
 public class HeroesService implements IHeroesService{
+    @Autowired
     private IHeroesDAO HeroesDAO;
     @Override
     public List<Heroes> findAll() {
