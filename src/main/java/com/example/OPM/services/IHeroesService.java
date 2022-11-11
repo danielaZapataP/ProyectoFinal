@@ -10,4 +10,6 @@ public interface IHeroesService {
     public Optional<Heroes> findById(int id);
     public void delete(int id);
     public Heroes save(Heroes c);
+    public List<Heroes> findTop();
+
 }

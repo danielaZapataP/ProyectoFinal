@@ -19,6 +19,11 @@ public class HeroesControlador {
         return  heroeService.findAll();
     }
 
+    @GetMapping("/topheroes")
+    public List<Heroes> findTop(){
+        return heroeService.findTop();
+    }
+
     @GetMapping("/{id}")
     public Heroes findById(@PathVariable int id) {
         return heroeService.findById(id).orElse(null);

@@ -11,6 +11,10 @@ import java.util.Optional;
 public class HeroesService implements IHeroesService{
     @Autowired
     private IHeroesDAO HeroesDAO;
+
+    public List<Heroes> findTop() {
+        return HeroesDAO.findTop10ByOrderByRangoDesc();
+    }
     @Override
     public List<Heroes> findAll() {
         return HeroesDAO.findAll();
