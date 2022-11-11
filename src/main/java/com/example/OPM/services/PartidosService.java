@@ -2,10 +2,11 @@ package com.example.OPM.services;
 
 import com.example.OPM.dao.IPartidosDAO;
 import com.example.OPM.entity.Partidos;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class PartidosService implements IPartidosService{
     private IPartidosDAO PartidosDAO;
     @Override

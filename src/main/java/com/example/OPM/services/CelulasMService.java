@@ -2,10 +2,11 @@ package com.example.OPM.services;
 
 import com.example.OPM.dao.ICelulasMDAO;
 import com.example.OPM.entity.CelulasM;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CelulasMService implements ICelulasMService{
     private ICelulasMDAO CelulasMDAO;
     @Override
